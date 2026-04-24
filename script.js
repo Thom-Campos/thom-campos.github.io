@@ -98,12 +98,12 @@ const translations = {
     'timeline.label':         'History',
     'timeline.title':         'Education & Experience',
     'timeline.present':       'Present',
-    'timeline.job1.role':     'Teaching Assistant',
+    'timeline.job1.role':     'Student Assistant',
     'timeline.job1.desc':     'Administrative and operational support: public assistance, student orientation, event collaboration and logistics coordination.',
     'timeline.job2.role':     'Volunteer Instructor · AI & Cybersecurity',
     'timeline.job2.desc':     'Designed and delivered practical workshops on Cybersecurity and Artificial Intelligence at the Center for Innovation and Technology Transfer. 100% applied approach.',
     'timeline.edu1.uni':      'Duoc UC',
-    'timeline.edu1.degree':   'B.Eng. Network & Connectivity Engineering',
+    'timeline.edu1.degree':   'Network & Connectivity Engineering',
     'timeline.edu1.desc':     'Focus on network management, system administration and cybersecurity. Activities: Volunteer Instructor (CITT) and Teaching Assistant.',
     'timeline.type.work':     'Work',
     'timeline.type.edu':      'Education',
@@ -207,7 +207,15 @@ function filterBlog(filter, btn) {
   });
 }
 
-const FORMSPREE_ID = 'xnjllrla';
+/* =========================================================
+   5. CONTACT FORM — Formspree
+   
+   Para activar el formulario:
+   1. Regístrate gratis en https://formspree.io
+   2. Crea un nuevo formulario (apunta a thomas.campos.carvacho@gmail.com)
+   3. Copia tu Form ID y reemplaza 'TU_FORM_ID' abajo
+   ─────────────────────────────────────────────────────── */
+const FORMSPREE_ID = 'xnjllrla'; // ← reemplazar, ej: 'xpwzgkjb'
 
 async function handleFormSubmit(e) {
   e.preventDefault();
