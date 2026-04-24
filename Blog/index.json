@@ -4,7 +4,7 @@
     "cat": "ctf",
     "dateDisplay": "— —",
     "icon": "construction",
-    "titleEs": "[PLACEHOLDER] Próximo CTF Writeupa",
+    "titleEs": "[PLACEHOLDER] Próximo CTF Writeup",
     "titleEn": "[PLACEHOLDER] Next CTF Writeup",
     "excerptEs": "Este espacio está reservado para un próximo writeup de CTF. Crea un archivo Blog/placeholder-writeup.md y añade aquí los metadatos reales.",
     "excerptEn": "This slot is reserved for an upcoming CTF writeup. Create Blog/placeholder-writeup.md and update the metadata here.",
