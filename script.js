@@ -137,6 +137,15 @@ const translations = {
   }
 };
 
+// Mapa de traducción para las etiquetas de habilidades (skill-tag)
+// Clave: texto original en español, Valor: traducción al inglés
+const skillTagTranslations = {
+  'Análisis de Logs':       'Log Analysis',
+  'Triage de Alertas':      'Alert Triage',
+  'Gestión de Incidentes':  'Incident Management',
+  'Enfoque en gestión de redes, administración de sistemas y ciberseguridad. Actividades: Docente Voluntario (CITT) y Alumno Ayudante.': '' // no se usa aquí, solo los tags
+};
+
 let currentLang = 'es';
 
 function setLanguage(lang) {
@@ -169,6 +178,19 @@ function setLanguage(lang) {
   if (fEmail)   fEmail.placeholder   = ph.fEmail;
   if (fSubject) fSubject.placeholder = ph.fSubject;
   if (fMessage) fMessage.placeholder = ph.fMessage;
+
+  // Actualizar las etiquetas de habilidades (skill-tag)
+  document.querySelectorAll('.skill-tag').forEach(tag => {
+    if (!tag.dataset.hasOwnProperty('originalEs')) return;
+    if (lang === 'en') {
+      const translation = skillTagTranslations[tag.dataset.originalEs];
+      if (translation) tag.textContent = translation;
+      // Si no hay traducción, se mantiene la original (español)
+    } else {
+      // Volver al texto original español
+      tag.textContent = tag.dataset.originalEs;
+    }
+  });
 
   // Re-render blog cards in the current language
   renderBlogGrid();
@@ -511,8 +533,6 @@ document.addEventListener('keydown', e => {
 
 // Parse #article/{id}/{lang} — lang is optional
 function parseArticleHash(hash) {
-  // e.g. "#article/fidae2026/en"  → { id: 'fidae2026', lang: 'en' }
-  //      "#article/fidae2026"     → { id: 'fidae2026', lang: null }
   const parts = hash.replace('#article/', '').split('/');
   const id    = parts[0];
   const lang  = ['es', 'en'].includes(parts[1]) ? parts[1] : null;
@@ -561,6 +581,14 @@ function applyScrollObserver(elements) {
   const savedLang = localStorage.getItem('lang') || 'es';
   currentLang = savedLang;
 
+  // Guardar el texto original en español de cada etiqueta de habilidad
+  // Antes de cualquier cambio de idioma, para poder restaurarlo
+  document.querySelectorAll('.skill-tag').forEach(tag => {
+    if (!tag.dataset.originalEs) {
+      tag.dataset.originalEs = tag.textContent.trim();
+    }
+  });
+
   // Set up scroll observer
   scrollObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -591,4 +619,3 @@ function applyScrollObserver(elements) {
     setTimeout(() => openArticle(id), 100);
   }
 })();
-
