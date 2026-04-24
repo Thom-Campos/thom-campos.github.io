@@ -498,7 +498,7 @@ section { position: relative; z-index: 1; }
 .timeline-type-badge {
   display: inline-flex; align-items: center; gap: 5px;
   font-size: 0.68rem; font-weight: 500;
-  padding: 3px 10px; border-radius: 100px; margin-top: 12px;
+  padding: 3px 10px; border-radius: 100px margin-top: 12px;
 }
 .badge-work { background: rgba(37,99,235,0.1); color: #3B82F6; border: 1px solid rgba(37,99,235,0.2); }
 .badge-edu  { background: rgba(16,185,129,0.1); color: #10B981; border: 1px solid rgba(16,185,129,0.2); }
@@ -913,7 +913,26 @@ footer {
 }
 
 @media (max-width: 768px) {
-  /* Hero Section App-Like */
+  /* =====================================================
+     AJUSTES DEL HEADER MÓVIL (EVITAR "OUT OF VIEW")
+  ===================================================== */
+  #header .container { padding: 0 16px; }
+  .nav-inner         { gap: 8px; }
+  .nav-actions       { gap: 6px; }
+  
+  /* Reducir ligeramente el tamaño de los botones */
+  .icon-btn { width: 34px; height: 34px; }
+  .icon-btn .material-symbols-outlined { font-size: 18px; }
+  .lang-btn { padding: 3px 8px; font-size: 0.65rem; }
+  
+  /* Ajustar logo */
+  .nav-logo { font-size: 1rem; gap: 8px; }
+  .logo-mark { width: 30px; height: 30px; border-radius: 8px; }
+  .logo-mark svg { width: 16px; height: 16px; }
+  
+  /* =====================================================
+     RESTO DE EXPERIENCIA APP-LIKE
+  ===================================================== */
   #hero { padding: 100px 0 60px; }
   .hero-inner { gap: 32px; }
   .avatar-ring { width: 180px !important; height: 180px !important; margin: 0 auto; }
@@ -973,4 +992,11 @@ footer {
     right: 16px;
     background: var(--bg-glass-card);
   }
+}
+
+/* Pantallas extremadamente pequeñas (ej: iPhone SE).
+   Ocultamos tu nombre y dejamos solo el icono SVG para liberar espacio
+   y evitar que los botones salgan de la pantalla por falta de pixeles. */
+@media (max-width: 380px) {
+  .nav-logo { font-size: 0; } 
 }
