@@ -207,15 +207,7 @@ function filterBlog(filter, btn) {
   });
 }
 
-/* =========================================================
-   5. CONTACT FORM — Formspree
-   
-   Para activar el formulario:
-   1. Regístrate gratis en https://formspree.io
-   2. Crea un nuevo formulario (apunta a thomas.campos.carvacho@gmail.com)
-   3. Copia tu Form ID y reemplaza 'TU_FORM_ID' abajo
-   ─────────────────────────────────────────────────────── */
-const FORMSPREE_ID = 'xnjllrla'; // ← reemplazar, ej: 'xpwzgkjb'
+const FORMSPREE_ID = 'xnjllrla';
 
 async function handleFormSubmit(e) {
   e.preventDefault();
