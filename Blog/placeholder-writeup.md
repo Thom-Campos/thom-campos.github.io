@@ -2,14 +2,14 @@
 
 > ⚠️ **Este es un archivo de ejemplo.** Reemplaza este contenido con tu writeup real y actualiza los metadatos en `Blog/index.json`.
 
----
+***
 
 ## Sistema de blog bilingüe
 
 Cada entrada del blog puede tener **dos archivos Markdown**:
 
 | Archivo | Idioma | ¿Obligatorio? |
-|---|---|---|
+| ------- | ------ | ------------- |
 | `Blog/{id}.md` | Español | ✅ Sí |
 | `Blog/{id}.en.md` | Inglés | ⬜ Opcional |
 
@@ -42,7 +42,7 @@ Si el visitante tiene el idioma en **inglés** y existe `Blog/{id}.en.md`, se ca
 
 **4.** ¡Listo! La tarjeta aparece automáticamente.
 
----
+***
 
 ## Ejemplo de estructura de writeup
 
@@ -68,5 +68,5 @@ FLAG{ejemplo_de_flag}
 
 ## Aprendizajes
 
-- Punto clave 1
-- Punto clave 2
+* Punto clave 1
+* Punto clave 2
