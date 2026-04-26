@@ -54,7 +54,7 @@ const translations = {
     'blog.label':             'Publicaciones',
     'blog.title':             'Blog & Write-ups',
     'blog.filter.all':        'Todos',
-    'blog.filter.events':     'Eventos',
+    'blog.filter.articles':   'Artículos',
     'blog.read':              'Leer',
     // Contact
     'contact.label':          'Contacto',
@@ -121,7 +121,7 @@ const translations = {
     'blog.label':             'Publications',
     'blog.title':             'Blog & Write-ups',
     'blog.filter.all':        'All',
-    'blog.filter.events':     'Events',
+    'blog.filter.articles':   'Articles',
     'blog.read':              'Read',
     // Contact
     'contact.label':          'Contact',
@@ -135,15 +135,6 @@ const translations = {
     // Footer
     'footer.copy':            '© 2026 Thomas Campos. All rights reserved.',
   }
-};
-
-// Mapa de traducción para las etiquetas de habilidades (skill-tag)
-// Clave: texto original en español, Valor: traducción al inglés
-const skillTagTranslations = {
-  'Análisis de Logs':       'Log Analysis',
-  'Triage de Alertas':      'Alert Triage',
-  'Gestión de Incidentes':  'Incident Management',
-  'Enfoque en gestión de redes, administración de sistemas y ciberseguridad. Actividades: Docente Voluntario (CITT) y Alumno Ayudante.': '' // no se usa aquí, solo los tags
 };
 
 let currentLang = 'es';
@@ -179,19 +170,6 @@ function setLanguage(lang) {
   if (fSubject) fSubject.placeholder = ph.fSubject;
   if (fMessage) fMessage.placeholder = ph.fMessage;
 
-  // Actualizar las etiquetas de habilidades (skill-tag)
-  document.querySelectorAll('.skill-tag').forEach(tag => {
-    if (!tag.dataset.hasOwnProperty('originalEs')) return;
-    if (lang === 'en') {
-      const translation = skillTagTranslations[tag.dataset.originalEs];
-      if (translation) tag.textContent = translation;
-      // Si no hay traducción, se mantiene la original (español)
-    } else {
-      // Volver al texto original español
-      tag.textContent = tag.dataset.originalEs;
-    }
-  });
-
   // Re-render blog cards in the current language
   renderBlogGrid();
 }
@@ -222,11 +200,14 @@ window.addEventListener('scroll', () => {
 function filterBlog(filter, btn) {
   document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
-  document.querySelectorAll('.blog-card').forEach(card => {
-    const match = filter === 'all' || card.dataset.cat === filter;
-    card.setAttribute('data-hidden', match ? 'false' : 'true');
-    card.style.display = match ? 'flex' : 'none';
-  });
+  activeFilter = filter;
+  visibleCount = POSTS_PER_PAGE;
+  renderBlogGrid();
+}
+
+function loadMorePosts() {
+  visibleCount += POSTS_PER_PAGE;
+  renderBlogGrid();
 }
 
 /* =========================================================
@@ -361,7 +342,7 @@ function closeMobileNav() { document.getElementById('mobileNav').classList.remov
    2. Abre  Blog/index.json  y agrega un nuevo objeto al array:
       {
         "id":          "mi-nuevo-post",      ← debe coincidir con el nombre del .md
-        "cat":         "ctf",                ← "ctf" | "event"
+        "cat":         "ctf",                ← "ctf" | "event" (artículos de largo formato)
         "dateDisplay": "May 2026",
         "icon":        "emoji_events",       ← nombre de Material Symbol
         "titleEs":     "Título en español",
@@ -394,6 +375,11 @@ async function loadPosts() {
   renderBlogGrid();
 }
 
+/* ─── Pagination state ───────────────────────────────────────────────── */
+const POSTS_PER_PAGE = 6;
+let visibleCount = POSTS_PER_PAGE;
+let activeFilter = 'all';
+
 /* ─── Render blog grid from POSTS array ─────────────────────────────── */
 function renderBlogGrid() {
   const grid = document.getElementById('blogGrid');
@@ -406,7 +392,15 @@ function renderBlogGrid() {
     return;
   }
 
-  grid.innerHTML = POSTS.map(post => {
+  // Filter posts by active category
+  const filtered = activeFilter === 'all'
+    ? POSTS
+    : POSTS.filter(p => p.cat === activeFilter);
+
+  // Slice to current visible count
+  const visible = filtered.slice(0, visibleCount);
+
+  grid.innerHTML = visible.map(post => {
     const title   = lang === 'es' ? post.titleEs   : post.titleEn;
     const excerpt = lang === 'es' ? post.excerptEs : post.excerptEn;
     const readLbl = translations[lang]['blog.read'] || 'Leer';
@@ -443,6 +437,32 @@ function renderBlogGrid() {
 
   // Re-apply scroll observer to newly rendered cards
   applyScrollObserver(grid.querySelectorAll('.blog-card'));
+
+  // "Show more" button
+  const remaining = filtered.length - visibleCount;
+  let loadMoreBtn = document.getElementById('blogLoadMore');
+  if (!loadMoreBtn) {
+    loadMoreBtn = document.createElement('div');
+    loadMoreBtn.id = 'blogLoadMore';
+    loadMoreBtn.style.cssText = 'grid-column:1/-1;display:flex;justify-content:center;margin-top:8px;';
+    grid.parentElement.insertBefore(loadMoreBtn, grid.nextSibling);
+  }
+
+  if (remaining > 0) {
+    const es = currentLang === 'es';
+    loadMoreBtn.innerHTML = `
+      <button onclick="loadMorePosts()" style="
+        display:flex;align-items:center;gap:8px;
+        padding:12px 28px;border-radius:10px;border:1px solid var(--border);
+        background:var(--card-bg);color:var(--text-primary);
+        font-family:inherit;font-size:0.9rem;font-weight:500;cursor:pointer;
+        transition:border-color 0.2s,background 0.2s;">
+        <span class="material-symbols-outlined" style="font-size:18px;">expand_more</span>
+        ${es ? `Ver ${remaining} más` : `Load ${remaining} more`}
+      </button>`;
+  } else {
+    loadMoreBtn.innerHTML = '';
+  }
 }
 
 /* =========================================================
@@ -533,6 +553,8 @@ document.addEventListener('keydown', e => {
 
 // Parse #article/{id}/{lang} — lang is optional
 function parseArticleHash(hash) {
+  // e.g. "#article/fidae2026/en"  → { id: 'fidae2026', lang: 'en' }
+  //      "#article/fidae2026"     → { id: 'fidae2026', lang: null }
   const parts = hash.replace('#article/', '').split('/');
   const id    = parts[0];
   const lang  = ['es', 'en'].includes(parts[1]) ? parts[1] : null;
@@ -581,14 +603,6 @@ function applyScrollObserver(elements) {
   const savedLang = localStorage.getItem('lang') || 'es';
   currentLang = savedLang;
 
-  // Guardar el texto original en español de cada etiqueta de habilidad
-  // Antes de cualquier cambio de idioma, para poder restaurarlo
-  document.querySelectorAll('.skill-tag').forEach(tag => {
-    if (!tag.dataset.originalEs) {
-      tag.dataset.originalEs = tag.textContent.trim();
-    }
-  });
-
   // Set up scroll observer
   scrollObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -619,3 +633,4 @@ function applyScrollObserver(elements) {
     setTimeout(() => openArticle(id), 100);
   }
 })();
+
