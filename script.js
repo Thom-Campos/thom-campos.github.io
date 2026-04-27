@@ -25,8 +25,8 @@ const translations = {
     'about.p2':               'Competidor CTF activo en torneos nacionales e internacionales, con posiciones destacadas como Top 36/233 y Top 74/617 en competencias recientes. Experiencia práctica resolviendo desafíos de infraestructura, vulnerabilidades SSL legacy, bypass SSH y escalamiento de privilegios.',
     'about.p3':               'Mi objetivo es integrar mis certificaciones, habilidades técnicas y experiencia en liderazgo estudiantil para aportar valor en equipos de seguridad, mientras continúo creciendo en el área.',
     'about.stat1':            'Certificaciones',
-    'about.stat2':            'Mejor posición CTF',
-    'about.stat3':            'Pts aportados al equipo',
+    'about.stat2':            'Mejor posición CTF Nacional',
+    'about.stat3':            'Mejor posición CTF Internacional',
     // Timeline
     'timeline.label':         'Historial',
     'timeline.title':         'Formación & Experiencia',
@@ -92,8 +92,8 @@ const translations = {
     'about.p2':               'Active CTF competitor in national and international tournaments, with top rankings such as Top 36/233 and Top 74/617 in recent competitions. Hands-on experience solving infrastructure challenges, legacy SSL vulnerabilities, SSH bypass and privilege escalation.',
     'about.p3':               'My goal is to combine my certifications, technical skills and student leadership experience to add value in security teams, while continuing to grow in the field.',
     'about.stat1':            'Certifications',
-    'about.stat2':            'Best CTF Ranking',
-    'about.stat3':            'Points contributed',
+    'about.stat2':            'Best National CTF Ranking',
+    'about.stat3':            'Best International CTF Ranking',
     // Timeline
     'timeline.label':         'History',
     'timeline.title':         'Education & Experience',
