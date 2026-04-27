@@ -7,8 +7,8 @@
     "articleDate": "26-04-2026",
     "titleEs": "misc/insider-info - UMDCTF",
     "titleEn": "misc/insider-info - UMDCTF",
-    "excerptEs": "Explicación paso a paso de cómo resolver el reto \"insider-info\" de la categoría Misc en UMDCTF. El desafío se solucionó evadiendo el límite de paquetes de un servidor DNS empaquetando 819 consultas simultáneas en un solo envío. Finalmente, se construyó un paquete DNS a mano utilizando bytes crudos para saltarse las restricciones de longitud del RFC de la librería en Python y así extraer la flag.",
-    "excerptEn": "Step-by-step write-up for the UMDCTF \"insider-info\" Misc challenge. The challenge was solved by bypassing a DNS server's packet limit by packing 819 simultaneous queries into a single request. Finally, a DNS packet was crafted manually using raw bytes to bypass the Python library's RFC length restrictions and extract the flag.",
+    "excerptEs": "Write-up del reto \"insider-info\" de UMDCTF. Explica cómo evadir el límite de paquetes de un servidor DNS enviando 819 consultas simultáneas y cómo armar un payload en bytes crudos para saltar las restricciones de RFC y extraer la flag.",
+    "excerptEn": "Write-up for the UMDCTF \"insider-info\" challenge. It explains how to bypass a DNS server's packet limit by sending 819 simultaneous queries and how to craft a raw byte payload to bypass RFC restrictions and extract the flag.",
     "cardTags": [
       {
         "text": "UMDCTF",
