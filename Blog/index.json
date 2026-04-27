@@ -1,5 +1,77 @@
 [
   {
+    "id": "umdctf-insider-info",
+    "cat": "ctf",
+    "icon": "dns",
+    "dateDisplay": "26-04-2026",
+    "articleDate": "26-04-2026",
+    "titleEs": "misc/insider-info - UMDCTF",
+    "titleEn": "misc/insider-info - UMDCTF",
+    "excerptEs": "Explicación paso a paso de cómo resolver el reto \"insider-info\" de la categoría Misc en UMDCTF. El desafío se solucionó evadiendo el límite de paquetes de un servidor DNS empaquetando 819 consultas simultáneas en un solo envío. Finalmente, se construyó un paquete DNS a mano utilizando bytes crudos para saltarse las restricciones de longitud del RFC de la librería en Python y así extraer la flag.",
+    "excerptEn": "Step-by-step write-up for the UMDCTF \"insider-info\" Misc challenge. The challenge was solved by bypassing a DNS server's packet limit by packing 819 simultaneous queries into a single request. Finally, a DNS packet was crafted manually using raw bytes to bypass the Python library's RFC length restrictions and extract the flag.",
+    "cardTags": [
+      {
+        "text": "UMDCTF",
+        "cls": "tag-misc"
+      },
+      {
+        "text": " Misc",
+        "cls": "tag-misc"
+      },
+      {
+        "text": " DNS",
+        "cls": "tag-misc"
+      },
+      {
+        "text": " Python",
+        "cls": "tag-misc"
+      },
+      {
+        "text": " Socket",
+        "cls": "tag-misc"
+      },
+      {
+        "text": " Redes",
+        "cls": "tag-misc"
+      },
+      {
+        "text": " Write-up",
+        "cls": "tag-misc"
+      }
+    ],
+    "articleTags": [
+      {
+        "text": "UMDCTF",
+        "cls": "tag-misc"
+      },
+      {
+        "text": " Misc",
+        "cls": "tag-misc"
+      },
+      {
+        "text": " DNS",
+        "cls": "tag-misc"
+      },
+      {
+        "text": " Python",
+        "cls": "tag-misc"
+      },
+      {
+        "text": " Socket",
+        "cls": "tag-misc"
+      },
+      {
+        "text": " Redes",
+        "cls": "tag-misc"
+      },
+      {
+        "text": " Write-up",
+        "cls": "tag-misc"
+      }
+    ],
+    "placeholder": false
+  },
+  {
     "id": "umdctf-rag-poisoning",
     "cat": "ctf",
     "icon": "smart_toy",
