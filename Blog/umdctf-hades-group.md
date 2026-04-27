@@ -1,5 +1,7 @@
-**Flag:** `UMDCTF{REC-9305174}`  
-**Categoría:** OSINT  
+**Flag:** `UMDCTF{REC-9305174}`
+
+**Categoría:** OSINT
+
 **Autor del reto:** greyroad__
 ***
 
@@ -7,9 +9,9 @@ Este reto fue básicamente trabajo de detective puro y duro. Fue el último que 
 
 ## El caso: Hades Group
 
-Nos pasaron un dump de Telegram (`hades_export.json`) de un grupo llamado "Hades Group". Básicamente, era un mercado clandestino donde la gente apostaba si iban a doxear o swattear a distintas personas reales. 
+Nos pasaron un dump de Telegram (`hades_export.json`) de un grupo llamado "Hades Group". Básicamente, era un mercado clandestino donde la gente apostaba si iban a doxear o swattear a distintas personas reales.
 
-El admin era súper cuidadoso y nunca posteaba con su cuenta personal. Todos sus mensajes salían como anónimos del canal (con un `from_id` tipo `"channel..."`). 
+El admin era súper cuidadoso y nunca posteaba con su cuenta personal. Todos sus mensajes salían como anónimos del canal (con un `from_id` tipo `"channel..."`).
 
 Nuestra misión era desenmascarar al dueño real de toda esta operación y conseguir un **Document Record ID** que entregaba uno de los bots al final de la investigación.
 
@@ -18,7 +20,7 @@ Nuestra misión era desenmascarar al dueño real de toda esta operación y conse
 Teníamos acceso a un montón de bots para ir armando el puzzle:
 
 | Bot | Función |
-|---|---|
+| --- | ------- |
 | `@QuickOSINTSearch_XGBXL_389YBot` | Leak DB A — busca por username, UID o teléfono |
 | `@EyeOfTheGod_ZF231_389YBot` | Leak DB B — busca por username, UID o teléfono |
 | `@SherlockTweaked_9VEZB_389YBot` | Caché web e historial de usernames |
@@ -145,13 +147,13 @@ Misión cumplida. Nos soltó el récord exacto que pedía el desafío.
 ## Perfil del admin cacheado
 
 | Campo | Datazo |
-|---|---|
+| ----- | ------ |
 | Nombre real | Niklas Hofmann |
 | País | Alemania |
 | Teléfono | +49 160 5550 7318 |
 | UID Telegram | 7816442093 |
-| Alias principal activo | @kerberos_spine |
-| Alias descartable | @zeus_archive |
+| Alias principal activo | @kerberos\_spine |
+| Alias descartable | @zeus\_archive |
 | Record ID | REC-9305174 |
 
 ***
