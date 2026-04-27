@@ -2,7 +2,7 @@
 
 **Categoría:** Misc
 
-**Autor del Reto:** segal
+**Autor del reto:** segal
 
 ***
 
