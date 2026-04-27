@@ -1,5 +1,77 @@
 [
   {
+    "id": "umdctf-misc-dualflow",
+    "cat": "ctf",
+    "icon": "psychology",
+    "dateDisplay": "27-04-2026",
+    "articleDate": "27-04-2026",
+    "titleEs": "misc/dualflow - UMDCTF",
+    "titleEn": "misc/dualflow - UMDCTF",
+    "excerptEs": "Write-up del reto \"dualflow\" de UMDCTF. Explica cómo evadir un sistema de detección de anomalías basado en Normalizing Flows mediante un ataque adversario de caja blanca, utilizando PGD para inyectar ruido sutil y engañar a los modelos sin destruir la data.",
+    "excerptEn": "Write-up for the UMDCTF \"dualflow\" challenge. It explains how to bypass an anomaly detection system based on Normalizing Flows via a white-box adversarial attack, using PGD to inject subtle noise and trick the models without destroying the data.",
+    "cardTags": [
+      {
+        "text": "UMDCTF",
+        "cls": "tag-misc"
+      },
+      {
+        "text": " Misc",
+        "cls": "tag-misc"
+      },
+      {
+        "text": " AI",
+        "cls": "tag-misc"
+      },
+      {
+        "text": " PyTorch",
+        "cls": "tag-misc"
+      },
+      {
+        "text": " Adversarial Attack",
+        "cls": "tag-misc"
+      },
+      {
+        "text": " PGD",
+        "cls": "tag-misc"
+      },
+      {
+        "text": " Write-up",
+        "cls": "tag-misc"
+      }
+    ],
+    "articleTags": [
+      {
+        "text": "UMDCTF",
+        "cls": "tag-misc"
+      },
+      {
+        "text": " Misc",
+        "cls": "tag-misc"
+      },
+      {
+        "text": " AI",
+        "cls": "tag-misc"
+      },
+      {
+        "text": " PyTorch",
+        "cls": "tag-misc"
+      },
+      {
+        "text": " Adversarial Attack",
+        "cls": "tag-misc"
+      },
+      {
+        "text": " PGD",
+        "cls": "tag-misc"
+      },
+      {
+        "text": " Write-up",
+        "cls": "tag-misc"
+      }
+    ],
+    "placeholder": false
+  },
+  {
     "id": "umdctf-rev-rainbet",
     "cat": "ctf",
     "icon": "videogame_asset",
