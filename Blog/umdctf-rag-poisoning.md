@@ -5,9 +5,9 @@
 **Autor del Reto:** unsure
 ***
 
-Este reto me dio hartos dolores de cabeza porque lidiar con LLMs a veces es como pelear con una pared. La premisa era engañar a un chatbot, pero el sistema tenía un filtro bien mañoso.
-
 ## Contexto
+
+Este reto me dio hartos dolores de cabeza porque lidiar con LLMs a veces es como pelear con una pared. La premisa era engañar a un chatbot, pero el sistema tenía un filtro bien mañoso.
 
 La descripción solo decía *"Is CTF dead? really?"* y nos pasaban la URL de una interfaz web con un bot.
 
