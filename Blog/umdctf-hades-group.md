@@ -5,9 +5,9 @@
 **Autor del reto:** greyroad__
 ***
 
-Este reto fue básicamente trabajo de detective puro y duro. Fue el último que hice, más que nada porque, la verdad, los desafíos de OSINT me intimidaban bastante.
-
 ## El caso: Hades Group
+
+Este reto fue básicamente trabajo de detective puro y duro. Fue el último que hice, más que nada porque, la verdad, los desafíos de OSINT me intimidaban bastante.
 
 Nos pasaron un dump de Telegram (`hades_export.json`) de un grupo llamado "Hades Group". Básicamente, era un mercado clandestino donde la gente apostaba si iban a doxear o swattear a distintas personas reales.
 
