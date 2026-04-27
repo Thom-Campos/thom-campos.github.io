@@ -6,9 +6,9 @@
 
 ***
 
-This challenge was basically pure detective work. It was the last one I tackled, mostly because OSINT challenges honestly intimidated me quite a bit.
-
 ## The case: Hades Group
+
+This challenge was basically pure detective work. It was the last one I tackled, mostly because OSINT challenges honestly intimidated me quite a bit.
 
 We were given a Telegram dump (`hades_export.json`) from a shady group called "Hades Group". It was essentially an underground marketplace where people placed bets on whether specific real individuals would be doxxed or swatted.
 
