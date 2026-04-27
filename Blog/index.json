@@ -1,5 +1,85 @@
 [
   {
+    "id": "umdctf-rev-rainbet",
+    "cat": "ctf",
+    "icon": "videogame_asset",
+    "dateDisplay": "27-04-2026",
+    "articleDate": "27-04-2026",
+    "titleEs": "rev/rainbet - UMDCTF",
+    "titleEn": "rev/rainbet - UMDCTF",
+    "excerptEs": "Write-up del reto \"rainbet\" de UMDCTF. Explica cómo predecir los resultados de un casino online explotando un RNG determinista en WebAssembly y automatizando 25 victorias consecutivas por WebSockets mediante la falsificación de firmas HMAC.",
+    "excerptEn": "Write-up for the UMDCTF \"rainbet\" challenge. It explains how to predict online casino game outcomes by exploiting a deterministic RNG in WebAssembly and automating a 25-win streak over WebSockets by forging HMAC signatures.",
+    "cardTags": [
+      {
+        "text": "UMDCTF",
+        "cls": "tag-misc"
+      },
+      {
+        "text": " Rev",
+        "cls": "tag-misc"
+      },
+      {
+        "text": " WebAssembly",
+        "cls": "tag-misc"
+      },
+      {
+        "text": " WASM",
+        "cls": "tag-misc"
+      },
+      {
+        "text": " RNG",
+        "cls": "tag-misc"
+      },
+      {
+        "text": " WebSockets",
+        "cls": "tag-misc"
+      },
+      {
+        "text": " Python",
+        "cls": "tag-misc"
+      },
+      {
+        "text": " Write-up",
+        "cls": "tag-misc"
+      }
+    ],
+    "articleTags": [
+      {
+        "text": "UMDCTF",
+        "cls": "tag-misc"
+      },
+      {
+        "text": " Rev",
+        "cls": "tag-misc"
+      },
+      {
+        "text": " WebAssembly",
+        "cls": "tag-misc"
+      },
+      {
+        "text": " WASM",
+        "cls": "tag-misc"
+      },
+      {
+        "text": " RNG",
+        "cls": "tag-misc"
+      },
+      {
+        "text": " WebSockets",
+        "cls": "tag-misc"
+      },
+      {
+        "text": " Python",
+        "cls": "tag-misc"
+      },
+      {
+        "text": " Write-up",
+        "cls": "tag-misc"
+      }
+    ],
+    "placeholder": false
+  },
+  {
     "id": "umdctf-rev-roulette",
     "cat": "ctf",
     "icon": "casino",
