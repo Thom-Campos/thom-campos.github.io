@@ -14,7 +14,7 @@ At first glance, it involved a simulator of an autonomous car that had to be for
 
 ## Challenge: rush-hour
 
-> *"roobet recently introduced their new game: rush hour. The objective of the game is to successfully bet on how many cars cross an arbitrary section of road..."*
+```"roobet recently introduced their new game: rush hour. The objective of the game is to successfully bet on how many cars cross an arbitrary section of road..."```
 
 Basically, the interface gave us a live traffic camera and a car simulator. The goal was to get the vehicle to drive straight toward a green line.
 
