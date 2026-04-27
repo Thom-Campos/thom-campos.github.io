@@ -1,5 +1,3 @@
-# Write-up: misc/rush-hour - UMDCTF
-
 **Flag:** `UMDCTF{now_you_know_how_to_drive_an_autonomous_vehicle_now_go_win_on_roobet}`
 
 **Category:** Misc
