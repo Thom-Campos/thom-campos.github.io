@@ -14,7 +14,7 @@ A simple vista, trataba de un simulador de un auto autónomo al que había que o
 
 ## Desafío: rush-hour
 
-> *"roobet recently introduced their new game: rush hour. The objective of the game is to successfully bet on how many cars cross an arbitrary section of road..."*
+```"roobet recently introduced their new game: rush hour. The objective of the game is to successfully bet on how many cars cross an arbitrary section of road..."```
 
 Básicamente, la interfaz nos daba una cámara de tráfico en vivo y un simulador del auto. El objetivo era lograr que el vehículo fuera directo hacia una línea verde.
 
