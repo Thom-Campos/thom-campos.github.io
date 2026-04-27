@@ -1,6 +1,9 @@
 **Flag:** `UMDCTF{retrieval_augmented_misleading}`
+
 **Category:** Misc
+
 **Challenge author:** unsure
+
 ***
 
 This challenge gave me quite a few headaches because dealing with LLMs is sometimes like fighting a wall. The premise was to trick a chatbot, but the system had a pretty sneaky filter.
