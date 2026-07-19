@@ -1,508 +1,112 @@
 <!DOCTYPE html>
-<html lang="es" data-theme="dark">
+<html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Thomas Campos</title>
-  
+  <title>Thomas Campos — Ciberseguridad & CTF</title>
+  <meta name="description" content="Thomas Campos — Ciberseguridad, Blue Team, competidor CTF. Write-ups de UMDCTF." />
   <link rel="icon" type="image/png" href="Media/avatar.png" />
-  
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Outfit:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
   <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
-  <!-- =========================================================
-       HEADER / NAV
-  ========================================================= -->
+
   <header id="header">
-    <div class="container">
-      <nav class="nav-inner">
-        <a href="#hero" class="nav-logo">
-          <div class="logo-mark">
-            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 2L3 7v5c0 5.25 3.75 10.15 9 11.35C17.25 22.15 21 17.25 21 12V7L12 2z" fill="white" opacity="0.9"/>
-              <path d="M9 12l2 2 4-4" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
-          Thomas Campos
-        </a>
-
-        <ul class="nav-links">
-          <li><a href="#about"   data-i18n="nav.about">Sobre mí</a></li>
-          <li><a href="#skills"  data-i18n="nav.skills">Habilidades</a></li>
-          <li><a href="#blog"    data-i18n="nav.blog">Blog</a></li>
-          <li><a href="#contact" data-i18n="nav.contact">Contacto</a></li>
-        </ul>
-
-        <div class="nav-actions">
-          <div class="lang-toggle" role="group" aria-label="Selector de idioma">
-            <button class="lang-btn active" data-lang="es" onclick="setLanguage('es')">ES</button>
-            <button class="lang-btn"        data-lang="en" onclick="setLanguage('en')">EN</button>
-          </div>
-          <button class="icon-btn" id="themeToggle" aria-label="Toggle theme" onclick="toggleTheme()">
-            <span class="material-symbols-outlined" id="themeIcon">dark_mode</span>
-          </button>
-          <button class="icon-btn nav-hamburger" id="mobileMenuBtn" aria-label="Open menu" onclick="openMobileNav()">
-            <span class="material-symbols-outlined">menu</span>
-          </button>
-        </div>
+    <div class="nav-inner">
+      <a href="#top" class="nav-logo">Thomas Campos</a>
+      <nav class="nav-links">
+        <a href="#ctfs">CTFs</a>
+        <a href="#contact">Contacto</a>
       </nav>
+      <div class="lang-toggle">
+        <button class="lang-btn active" data-lang="es">ES</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+      </div>
     </div>
   </header>
 
-  <nav class="mobile-nav" id="mobileNav">
-    <button class="icon-btn mobile-nav-close" onclick="closeMobileNav()">
-      <span class="material-symbols-outlined">close</span>
-    </button>
-    <a href="#about"   onclick="closeMobileNav()" data-i18n="nav.about">Sobre mí</a>
-    <a href="#skills"  onclick="closeMobileNav()" data-i18n="nav.skills">Habilidades</a>
-    <a href="#blog"    onclick="closeMobileNav()" data-i18n="nav.blog">Blog</a>
-    <a href="#contact" onclick="closeMobileNav()" data-i18n="nav.contact">Contacto</a>
-  </nav>
-
-  <!-- =========================================================
-       ARTICLE MODAL
-  ========================================================= -->
-  <div id="articleModal" class="modal-overlay" onclick="handleModalClick(event)">
-    <div class="modal-inner">
-      <button class="modal-close icon-btn" onclick="closeArticle()" aria-label="Cerrar">
-        <span class="material-symbols-outlined">close</span>
-      </button>
-      <div class="modal-meta">
-        <span class="blog-date" id="modalDate"></span>
-        <div id="modalTags" class="blog-tags"></div>
-      </div>
-      <h1 class="modal-title" id="modalTitle"></h1>
-      <div class="modal-content" id="modalContent"></div>
-    </div>
-  </div>
-
   <main>
-    <!-- =========================================================
-         HERO
-    ========================================================= -->
-    <section id="hero">
-      <div class="hero-blob hero-blob-1"></div>
-      <div class="hero-blob hero-blob-2"></div>
+    <section id="top" class="hero">
+      <div class="hero-content">
+        <div class="hero-content-inner">
+          <h1 class="hero-title">
+            <span data-i18n="hero.line1">Bienvenido, soy</span>
+            <span data-i18n="hero.line2">Thomas Campos</span>
+          </h1>
+          <p class="hero-role" data-i18n="hero.role">CIBERSEGURIDAD · BLUE TEAM · CTF PLAYER</p>
+          <p class="hero-desc" data-i18n="hero.desc">Técnico en Redes egresado, actualmente cursando Ingeniería en Conectividad y Redes, orientado a Blue Team y análisis de eventos de seguridad. Certificado por Google, Cisco y CertiProf. Competidor CTF activo.</p>
 
-      <div class="container">
-        <div class="hero-inner">
-          <div class="hero-content">
-            <p class="hero-greeting" data-i18n="hero.greeting">Hola, soy</p>
-
-            <h1 class="hero-title">
-              <span data-i18n="hero.name">Thomas Campos</span><br>
-              <span class="accent-text hero-subtitle-role" data-i18n="hero.title">Ciberseguridad</span>
-            </h1>
-
-            <p class="hero-subtitle" data-i18n="hero.subtitle">
-              Estudiante de Ingeniería en Conectividad y Redes orientado a Blue Team y análisis de eventos de seguridad. Certificado por Google, Cisco y CertiProf. Competidor CTF activo.
-            </p>
-
-            <div class="hero-badges">
-              <span class="badge">
-                <span class="material-symbols-outlined">shield</span>
-                <span data-i18n="hero.badge1">Blue Team</span>
-              </span>
-              <span class="badge">
-                <span class="material-symbols-outlined">monitor_heart</span>
-                <span data-i18n="hero.badge2">SOC Nivel 1</span>
-              </span>
-              <span class="badge">
-                <span class="material-symbols-outlined">emoji_events</span>
-                CTF Player
-              </span>
-            </div>
-
-            <div class="hero-cta">
-              <a href="#contact" class="btn-primary">
-                <span class="material-symbols-outlined">mail</span>
-                <span data-i18n="hero.cta.contact">Contactar</span>
-              </a>
-              <a href="#blog" class="btn-secondary">
-                <span class="material-symbols-outlined">article</span>
-                <span data-i18n="hero.cta.blog">Ver Write-ups</span>
-              </a>
-            </div>
-          </div>
-
-          <div class="hero-avatar">
-            <div class="avatar-ring">
-              <div class="avatar-ring-inner" style="position:absolute;inset:0;border-radius:50%;z-index:1;background:var(--bg-base);"></div>
-              <div class="avatar-img-wrap">
-                <img
-                  src="Media/avatar.png"
-                  alt="Thomas Campos — Avatar"
-                  width="280"
-                  height="280"
-                  style="border-radius:50%;"
-                />
-              </div>
-            </div>
+          <div class="hero-cta">
+            <a href="#ctfs" class="btn btn-light" data-i18n="hero.cta1">Ver Write-ups</a>
+            <a href="#contact" class="btn btn-outline" data-i18n="hero.cta2">Contactar</a>
           </div>
         </div>
       </div>
 
-      <div class="hero-scroll">
-        <span class="material-symbols-outlined">keyboard_arrow_down</span>
-        <span data-i18n="hero.scroll">scroll</span>
+      <div class="hero-photo-wrap">
+        <img src="Media/headshot.png" alt="Thomas Campos" class="hero-photo" />
+      </div>
+
+      <a href="#ctfs" class="hero-scroll" aria-label="Scroll">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </section>
+
+    <section id="ctfs">
+      <div class="container">
+        <p class="eyebrow" data-i18n="ctfs.label">Write-ups</p>
+        <h2 class="section-title" data-i18n="ctfs.title">CTFs &amp; Write-ups</h2>
+        <p class="section-desc" data-i18n="ctfs.desc">Retos resueltos compitiendo en distintas competencias de ciberseguridad. Cada write-up documenta el proceso completo: reconocimiento, análisis y exploit.</p>
+
+        <div class="stats-row">
+          <div class="stat">
+            <div class="stat-number">7</div>
+            <div class="stat-label" data-i18n="ctfs.stat1">Write-ups</div>
+          </div>
+          <div class="stat">
+            <p class="stat-tag" data-i18n="ctfs.stat2tag">Nacional</p>
+            <div class="stat-number">Top 16%</div>
+            <div class="stat-label" data-i18n="ctfs.stat2">FIDAE Llaitun CTF (#36/233)</div>
+          </div>
+          <div class="stat">
+            <p class="stat-tag" data-i18n="ctfs.stat3tag">Internacional</p>
+            <div class="stat-number">Top 12%</div>
+            <div class="stat-label" data-i18n="ctfs.stat3">UMDCTF 2026 (#74/617)</div>
+          </div>
+          <div class="stat">
+            <div class="stat-number">5</div>
+            <div class="stat-label" data-i18n="ctfs.stat4">Categorías</div>
+          </div>
+        </div>
+
+        <div class="ctf-search">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><path d="M21 21l-4.3-4.3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          <input type="text" id="ctfSearch" data-i18n-placeholder="ctfs.search" placeholder="Buscar por título, categoría o técnica..." autocomplete="off" />
+        </div>
+
+        <div class="ctf-list" id="ctfList"></div>
       </div>
     </section>
 
-    <div class="section-divider" style="margin:0 24px;"></div>
-
-    <!-- =========================================================
-         ABOUT / TIMELINE
-    ========================================================= -->
-    <section id="about">
-      <div class="container">
-        <div class="about-grid">
-          <div>
-            <p class="section-label" data-i18n="about.label">Trayectoria</p>
-            <h2 class="section-title" data-i18n="about.title">Sobre mí</h2>
-            <div class="title-underline"></div>
-            <div class="about-text">
-              <p data-i18n="about.p1">
-                Estudiante de Ingeniería en Conectividad y Redes en Duoc UC, con foco en ciberseguridad defensiva y análisis de seguridad. Busco iniciar mi carrera en un SOC de Nivel 1, monitoreando y respondiendo a eventos de seguridad.
-              </p>
-              <p data-i18n="about.p2">
-                Competidor CTF activo en torneos nacionales e internacionales, con posiciones destacadas como Top 36/233 y Top 74/617 en competencias recientes. Experiencia práctica resolviendo desafíos de infraestructura, vulnerabilidades SSL legacy, bypass SSH y escalamiento de privilegios.
-              </p>
-              <p data-i18n="about.p3">
-                Mi objetivo es integrar mis certificaciones, habilidades técnicas y experiencia en liderazgo estudiantil para aportar valor en equipos de seguridad, mientras continúo creciendo en el área.
-              </p>
-            </div>
-
-            <div class="about-stats">
-              <div class="stat-card">
-                <div class="stat-number">6</div>
-                <div class="stat-label" data-i18n="about.stat1">Certificaciones</div>
-              </div>
-              <div class="stat-card">
-                <div class="stat-number">#36</div>
-                <div class="stat-label" data-i18n="about.stat2">Mejor posición CTF Nacional</div>
-              </div>
-              <div class="stat-card">
-                <div class="stat-number">#74</div>
-                <div class="stat-label" data-i18n="about.stat3">Mejor posición CTF Internacional</div>
-              </div>
-            </div>
-          </div>
-
-          <div>
-            <p class="section-label" data-i18n="timeline.label">Historial</p>
-            <h2 class="section-title" data-i18n="timeline.title">Formación & Experiencia</h2>
-            <div class="title-underline"></div>
-
-            <div class="timeline">
-              <!-- Carrera / Educación -->
-              <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-card">
-                  <div class="timeline-meta">
-                    <span class="timeline-company" data-i18n="timeline.edu1.uni">Duoc UC</span>
-                    <span class="timeline-date">2024 — <span data-i18n="timeline.present">Presente</span></span>
-                  </div>
-                  <div class="timeline-role" data-i18n="timeline.edu1.degree">Ingeniería en Conectividad y Redes</div>
-                  <p class="timeline-desc" data-i18n="timeline.edu1.desc">
-                    Enfoque en gestión de redes, administración de sistemas y ciberseguridad. Actividades: Docente Voluntario (CITT) y Alumno Ayudante.
-                  </p>
-                  <span class="timeline-type-badge badge-edu">
-                    <span class="material-symbols-outlined" style="font-size:12px">school</span>
-                    <span data-i18n="timeline.type.edu">Educación</span>
-                  </span>
-                </div>
-              </div>
-
-              <!-- Docente Voluntario -->
-              <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-card">
-                  <div class="timeline-meta">
-                    <span class="timeline-company">Duoc UC — CITT</span>
-                    <span class="timeline-date">Oct–Nov 2025</span>
-                  </div>
-                  <div class="timeline-role" data-i18n="timeline.job2.role">Docente Voluntario · IA & Ciberseguridad</div>
-                  <p class="timeline-desc" data-i18n="timeline.job2.desc">
-                    Diseñé e impartí talleres prácticos de Ciberseguridad e Inteligencia Artificial en el Centro de Innovación y Transferencia Tecnológica. Planifiqué clases con enfoque 100% aplicado.
-                  </p>
-                  <span class="timeline-type-badge badge-work">
-                    <span class="material-symbols-outlined" style="font-size:12px">school</span>
-                    <span data-i18n="timeline.type.work">Voluntariado</span>
-                  </span>
-                </div>
-              </div>
-
-              <!-- Alumno Ayudante -->
-              <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-card">
-                  <div class="timeline-meta">
-                    <span class="timeline-company">Duoc UC</span>
-                    <span class="timeline-date">2025</span>
-                  </div>
-                  <div class="timeline-role" data-i18n="timeline.job1.role">Alumno Ayudante</div>
-                  <p class="timeline-desc" data-i18n="timeline.job1.desc">
-                    Apoyo administrativo y operativo en tareas institucionales: atención al público, orientación a estudiantes, colaboración en eventos institucionales y coordinación logística.
-                  </p>
-                  <span class="timeline-type-badge badge-work">
-                    <span class="material-symbols-outlined" style="font-size:12px">work</span>
-                    <span data-i18n="timeline.type.work">Trabajo</span>
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <div class="section-divider" style="margin:0 24px;"></div>
-
-    <!-- =========================================================
-         SKILLS
-    ========================================================= -->
-    <section id="skills">
-      <div class="container">
-        <div class="skills-header">
-          <div>
-            <p class="section-label" data-i18n="skills.label">Arsenal</p>
-            <h2 class="section-title" data-i18n="skills.title">Habilidades & Herramientas</h2>
-            <div class="title-underline"></div>
-          </div>
-          <p class="section-desc" data-i18n="skills.desc">
-            Herramientas y tecnologías que utilizo para monitorear, analizar y responder a eventos de seguridad, con foco en operaciones defensivas (Blue Team / SOC).
-          </p>
-        </div>
-
-        <div class="skills-categories">
-          <!-- Blue Team / SOC -->
-          <div class="skill-category">
-            <div class="skill-cat-icon">
-              <span class="material-symbols-outlined">monitor_heart</span>
-            </div>
-            <div class="skill-cat-title" data-i18n="skills.cat1.title">Blue Team & SOC</div>
-            <div class="skill-tags">
-              <span class="skill-tag">Wazuh</span>
-              <span class="skill-tag">Wireshark</span>
-              <span class="skill-tag">Kali Linux</span>
-              <span class="skill-tag">Framework NIST</span>
-              <span class="skill-tag">Análisis de Logs</span>
-              <span class="skill-tag">Triage de Alertas</span>
-              <span class="skill-tag">Gestión de Incidentes</span>
-            </div>
-          </div>
-
-          <!-- Redes & Infraestructura -->
-          <div class="skill-category">
-            <div class="skill-cat-icon">
-              <span class="material-symbols-outlined">hub</span>
-            </div>
-            <div class="skill-cat-title" data-i18n="skills.cat2.title">Redes & Infraestructura</div>
-            <div class="skill-tags">
-              <span class="skill-tag">TCP/IP</span>
-              <span class="skill-tag">Cisco IOS</span>
-              <span class="skill-tag">VLANs</span>
-              <span class="skill-tag">Firewalls</span>
-              <span class="skill-tag">DNS / DHCP</span>
-              <span class="skill-tag">VPN / SSL</span>
-              <span class="skill-tag">Linux</span>
-              <span class="skill-tag">Proxmox</span>
-            </div>
-          </div>
-
-          <!-- Scripting & Dev -->
-          <div class="skill-category">
-            <div class="skill-cat-icon">
-              <span class="material-symbols-outlined">code</span>
-            </div>
-            <div class="skill-cat-title" data-i18n="skills.cat3.title">Scripting & Dev</div>
-            <div class="skill-tags">
-              <span class="skill-tag">Python</span>
-              <span class="skill-tag">Bash</span>
-              <span class="skill-tag">PowerShell</span>
-              <span class="skill-tag">Google Apps Script</span>
-              <span class="skill-tag">Java</span>
-              <span class="skill-tag">HTML / CSS</span>
-              <span class="skill-tag">Scrum</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Certifications -->
-        <div style="margin-top:56px;">
-          <p class="section-label" data-i18n="certs.label">Credenciales</p>
-          <h3 class="section-title" style="font-size:1.6rem;" data-i18n="certs.title">Certificaciones</h3>
-          <div class="title-underline"></div>
-          <div class="certs-grid">
-
-            <a class="cert-card cert-card-link" href="https://www.coursera.org/account/accomplishments/professional-cert/certificate/GNR3264231UX" target="_blank" rel="noopener noreferrer">
-              <div class="cert-icon">
-                <span class="material-symbols-outlined">verified</span>
-              </div>
-              <div class="cert-name">Google Cybersecurity</div>
-              <div class="cert-issuer">Google</div>
-              <div class="cert-date">Sep 2025</div>
-              <span class="cert-link-hint"><span class="material-symbols-outlined">open_in_new</span></span>
-            </a>
-
-            <a class="cert-card cert-card-link" href="https://www.coursera.org/account/accomplishments/professional-cert/certificate/R8CSWJRMNDGR" target="_blank" rel="noopener noreferrer">
-              <div class="cert-icon">
-                <span class="material-symbols-outlined">verified</span>
-              </div>
-              <div class="cert-name">Google IT Support</div>
-              <div class="cert-issuer">Google</div>
-              <div class="cert-date">Ago 2025</div>
-              <span class="cert-link-hint"><span class="material-symbols-outlined">open_in_new</span></span>
-            </a>
-
-            <a class="cert-card cert-card-link" href="https://drive.google.com/file/d/1Y8Jc4zhUgbH1QVk2s0Fp8CwmSxzWY6TW/view" target="_blank" rel="noopener noreferrer">
-              <div class="cert-icon">
-                <span class="material-symbols-outlined">verified</span>
-              </div>
-              <div class="cert-name">CCST Cybersecurity</div>
-              <div class="cert-issuer">Cisco</div>
-              <div class="cert-date">Jun 2025</div>
-              <span class="cert-link-hint"><span class="material-symbols-outlined">open_in_new</span></span>
-            </a>
-
-            <a class="cert-card cert-card-link" href="https://drive.google.com/file/d/1BGcjV-MFq4I4KeX0VJC2518R5D2aKySm/view" target="_blank" rel="noopener noreferrer">
-              <div class="cert-icon">
-                <span class="material-symbols-outlined">verified</span>
-              </div>
-              <div class="cert-name">Scrum Master Professional</div>
-              <div class="cert-issuer">CertiProf</div>
-              <div class="cert-date">Nov 2025</div>
-              <span class="cert-link-hint"><span class="material-symbols-outlined">open_in_new</span></span>
-            </a>
-
-            <a class="cert-card cert-card-link" href="https://drive.google.com/file/d/1eGTBcmwJCoEjtw62aCoFhOLwNHMUYtjP/view" target="_blank" rel="noopener noreferrer">
-              <div class="cert-icon">
-                <span class="material-symbols-outlined">verified</span>
-              </div>
-              <div class="cert-name">AI Expert Certification</div>
-              <div class="cert-issuer">CertiProf</div>
-              <div class="cert-date">Oct 2025</div>
-              <span class="cert-link-hint"><span class="material-symbols-outlined">open_in_new</span></span>
-            </a>
-
-            <a class="cert-card cert-card-link" href="https://cert.efset.org/aEE7h8" target="_blank" rel="noopener noreferrer">
-              <div class="cert-icon">
-                <span class="material-symbols-outlined">translate</span>
-              </div>
-              <div class="cert-name">English Certificate</div>
-              <div class="cert-issuer">EF SET</div>
-              <div class="cert-date">Oct 2023</div>
-              <span class="cert-link-hint"><span class="material-symbols-outlined">open_in_new</span></span>
-            </a>
-
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <div class="section-divider" style="margin:0 24px;"></div>
-
-    <!-- =========================================================
-         BLOG / WRITE-UPS
-    ========================================================= -->
-    <section id="blog">
-      <div class="container">
-        <div class="blog-header">
-          <div>
-            <p class="section-label" data-i18n="blog.label">Publicaciones</p>
-            <h2 class="section-title" data-i18n="blog.title">Blog & Write-ups</h2>
-            <div class="title-underline" style="margin-bottom:0;"></div>
-          </div>
-          <div class="blog-filters">
-            <button class="filter-btn active" data-filter="all" onclick="filterBlog('all', this)" data-i18n="blog.filter.all">Todos</button>
-            <button class="filter-btn" data-filter="ctf" onclick="filterBlog('ctf', this)">CTF Write-up</button>
-            <button class="filter-btn" data-filter="event" onclick="filterBlog('event', this)" data-i18n="blog.filter.articles">Artículos</button>
-          </div>
-        </div>
-
-        <div class="blog-grid" id="blogGrid">
-          <!-- Las tarjetas se renderizan desde el array POSTS en script.js -->
-        </div>
-      </div>
-    </section>
-
-    <div class="section-divider" style="margin:0 24px;"></div>
-
-    <!-- =========================================================
-         CONTACT
-    ========================================================= -->
     <section id="contact">
       <div class="container">
-        <div style="margin-bottom:56px;">
-          <p class="section-label" data-i18n="contact.label">Contacto</p>
-          <h2 class="section-title" data-i18n="contact.title">Hablemos</h2>
-          <div class="title-underline"></div>
-          <p class="section-desc" data-i18n="contact.desc">
-            Abierto a oportunidades en equipos de seguridad, colaboraciones técnicas y proyectos de Blue Team. Respondo a la brevedad.
-          </p>
-        </div>
+        <p class="eyebrow" data-i18n="contact.label">Contacto</p>
+        <h2 class="section-title" data-i18n="contact.title">Hablemos</h2>
+        <p class="section-desc" data-i18n="contact.desc">Abierto a oportunidades en equipos de seguridad y colaboraciones técnicas.</p>
 
         <div class="contact-grid">
-          <div class="contact-info">
-            <a href="https://ko-fi.com/thomascampos" target="_blank" class="contact-link-card">
-              <div class="contact-link-icon">
-                <span class="material-symbols-outlined">coffee</span>
-              </div>
-              <div class="contact-link-text">
-                <strong>Ko-fi</strong>
-                <span>ko-fi.com/thomascampos</span>
-              </div>
-              <span class="material-symbols-outlined contact-arrow">arrow_outward</span>
-            </a>
-
-            <a href="https://www.linkedin.com/in/thomascamposcarvacho/" target="_blank" class="contact-link-card">
-              <div class="contact-link-icon">
-                <span class="material-symbols-outlined">person</span>
-              </div>
-              <div class="contact-link-text">
-                <strong>LinkedIn</strong>
-                <span>/in/thomascamposcarvacho</span>
-              </div>
-              <span class="material-symbols-outlined contact-arrow">arrow_outward</span>
-            </a>
-
-            <a href="mailto:thomas.campos.carvacho@gmail.com" class="contact-link-card">
-              <div class="contact-link-icon">
-                <span class="material-symbols-outlined">mail</span>
-              </div>
-              <div class="contact-link-text">
-                <strong>Email</strong>
-                <span>thomas.campos.carvacho@gmail.com</span>
-              </div>
-              <span class="material-symbols-outlined contact-arrow">arrow_outward</span>
-            </a>
-
-            <div class="contact-link-card" style="cursor:default;">
-              <div class="contact-link-icon">
-                <span class="material-symbols-outlined">location_on</span>
-              </div>
-              <div class="contact-link-text">
-                <strong>Ubicación</strong>
-                <span>Santiago, Chile</span>
-              </div>
+          <form class="contact-form" id="contactForm" novalidate>
+            <div class="form-group">
+              <label for="fName" data-i18n="contact.form.name">Nombre</label>
+              <input type="text" id="fName" placeholder="Juan Pérez" autocomplete="off" />
             </div>
-          </div>
-
-          <div class="contact-form-wrap">
-            <div class="form-row">
-              <div class="form-group">
-                <label for="fName" data-i18n="contact.form.name">Nombre</label>
-                <input type="text" id="fName" placeholder="Juan Pérez" autocomplete="off" />
-              </div>
-              <div class="form-group">
-                <label for="fEmail" data-i18n="contact.form.email">Correo electrónico</label>
-                <input type="email" id="fEmail" placeholder="juan@empresa.com" autocomplete="off" />
-              </div>
+            <div class="form-group">
+              <label for="fEmail" data-i18n="contact.form.email">Correo electrónico</label>
+              <input type="email" id="fEmail" placeholder="juan@empresa.com" autocomplete="off" />
             </div>
             <div class="form-group">
               <label for="fSubject" data-i18n="contact.form.subject">Asunto</label>
@@ -512,10 +116,25 @@
               <label for="fMessage" data-i18n="contact.form.message">Mensaje</label>
               <textarea id="fMessage" placeholder="Cuéntame sobre la oportunidad o proyecto..."></textarea>
             </div>
-            <button class="form-submit" onclick="handleFormSubmit(event)">
-              <span class="material-symbols-outlined">send</span>
+            <p class="form-feedback" id="formFeedback"></p>
+            <button type="submit" class="btn btn-light form-submit" id="formSubmitBtn">
               <span data-i18n="contact.form.send">Enviar mensaje</span>
             </button>
+          </form>
+
+          <div class="contact-links">
+            <a href="mailto:thomas.campos.carvacho@gmail.com" class="contact-link">
+              <span class="contact-link-label" data-i18n="contact.emailLabel">Correo</span>
+              <span>thomas.campos.carvacho@gmail.com</span>
+            </a>
+            <a href="https://www.linkedin.com/in/thomascamposcarvacho/" target="_blank" rel="noopener noreferrer" class="contact-link">
+              <span class="contact-link-label">LinkedIn</span>
+              <span>/in/thomascamposcarvacho</span>
+            </a>
+            <a href="https://ko-fi.com/thomascampos" target="_blank" rel="noopener noreferrer" class="contact-link">
+              <span class="contact-link-label">Ko-fi</span>
+              <span>/thomascampos</span>
+            </a>
           </div>
         </div>
       </div>
@@ -523,22 +142,10 @@
   </main>
 
   <footer>
-    <div class="container">
-      <div class="footer-inner">
-        <p class="footer-copy">
-          <span data-i18n="footer.copy">© 2026 Thomas Campos. Todos los derechos reservados.</span>
-        </p>
-        <nav class="footer-links">
-          <a href="#about"   data-i18n="nav.about">Sobre mí</a>
-          <a href="#skills"  data-i18n="nav.skills">Habilidades</a>
-          <a href="#blog"    data-i18n="nav.blog">Blog</a>
-          <a href="#contact" data-i18n="nav.contact">Contacto</a>
-        </nav>
-      </div>
-    </div>
+    <p data-i18n="footer.copy">© 2026 Thomas Campos.</p>
   </footer>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+  <script src="data.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
