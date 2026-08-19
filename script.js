@@ -5,8 +5,8 @@ const translations = {
   es: {
     'hero.line1':    'Bienvenido, soy',
     'hero.line2':    'Thomas Campos',
-    'hero.role':     'CIBERSEGURIDAD · BLUE TEAM · CTF PLAYER',
-    'hero.desc':     'Técnico en Redes egresado, actualmente cursando Ingeniería en Conectividad y Redes, orientado a Blue Team y análisis de eventos de seguridad. Certificado por Google, Cisco y CertiProf. Competidor CTF activo.',
+    'hero.role':     'CIBERSEGURIDAD · RED TEAM · CTF PLAYER',
+    'hero.desc':     'Técnico en Redes egresado, actualmente cursando Ingeniería en Conectividad y Redes. Especializado en pentesting y explotación, con experiencia adicional en detección de intrusiones a través de mi proyecto de título. Certificado por Google, Cisco y Microsoft. Competidor CTF activo.',
     'hero.cta1':     'Ver Write-ups',
     'hero.cta2':     'Contactar',
 
@@ -44,8 +44,8 @@ const translations = {
   en: {
     'hero.line1':    'Welcome, I\'m',
     'hero.line2':    'Thomas Campos',
-    'hero.role':     'CYBERSECURITY · BLUE TEAM · CTF PLAYER',
-    'hero.desc':     'Network Technician graduate, currently pursuing a degree in Networking & Connectivity Engineering, focused on Blue Team work and security event analysis. Certified by Google, Cisco and CertiProf. Active CTF competitor.',
+    'hero.role':     'CYBERSECURITY · RED TEAM · CTF PLAYER',
+    'hero.desc':     'Network Technician graduate, currently pursuing an Engineering degree in Connectivity and Networks. Focused on pentesting and exploitation, with additional experience in intrusion detection through my capstone project. Certified by Google, Cisco, and Microsoft. Active CTF competitor.',
     'hero.cta1':     'Read Write-ups',
     'hero.cta2':     'Get in Touch',
 
